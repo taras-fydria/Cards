@@ -613,7 +613,7 @@ body {
   left: 0;
   bottom: 0;
   background: url(../img/thumb-1920-403408.jpg) no-repeat;
-  background-size: contain;
+  background-size: cover;
   z-index: 1; }
 
 .ba-content {
