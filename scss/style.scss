@@ -1,0 +1,134 @@
+@import "normalize";
+@import "layout";
+@import "elements";
+
+body {
+	color: #000000;
+}
+
+/* Layout */
+.ba-container {
+	padding-left: 20px;
+	padding-right: 20px;
+	max-width: 1200px;
+	position: relative;
+}
+
+.ba-background {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: url(../img/thumb-1920-403408.jpg) no-repeat;
+	background-size: cover;
+	z-index: 1;
+}
+
+.ba-content {
+	position: relative;
+	z-index: 2;
+}
+
+.ba-main {
+	padding: 100px 0;
+}
+
+.ba-card {
+	max-width: 160px;
+	height: 242px;
+	// background: #ffffff;
+	position: relative;
+	perspective: 800px;
+	margin: 50px auto;
+
+	// &__img {
+	// 	display: none;
+	// }
+
+	&--red {
+		color: red;
+	}
+
+	&--black {
+		color: #000000;
+	}
+
+	&__front {
+		background: #ffffff;
+		border-radius: 10px;
+		padding: 5px;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transition: transform .4s ease-in;
+		backface-visibility: hidden;
+		z-index: 4;
+	}
+
+	&__back {
+		color: #ffffff;
+		background: url(../img/e9671bfdecb6dfd253dc92eda96b23e9.jpg) no-repeat;
+		background-position-x: 50%;
+		background-size: cover;
+		border: 3px solid silver;
+		border-radius: 10px;
+		padding: 5px;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transition: transform .4s ease-in;
+		transform: rotateY(-180deg);
+	}
+
+}
+
+.ba-card:hover {
+	.ba-card__front {
+		transform: rotateY(180deg);
+		z-index: 4;
+
+
+	}
+
+	.ba-card__back {
+		transform: rotateY(0deg);
+
+	}
+}
+
+// .ba-big .ba-card__img {
+// 	display: block;
+// 	position: absolute;
+// 	top: 0;
+// 	bottom: 0;
+// 	right: 0;
+// 	left: 0;
+// 	background: url(../img/470x0_9mf1n6us9f7BMdMfYjwN6LaSixbuPr4a___jpg____4_bc866165.jpg) no-repeat;
+// 	background-size: cover;
+
+// }
+
+.ba-number {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	// z-index: 1;
+
+	&--reverse {
+		transform: rotateX(180deg);
+		bottom: 5%;
+		right: 5%;
+		position: absolute;
+		// z-index: 1;
+	}
+}
